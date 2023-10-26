@@ -3,6 +3,7 @@
 exports[`loadUserDetails > load user data as expected 1`] = `
 {
   "coolness": 100,
+  "favoriteFood": "sushi",
   "name": "Bob",
   "projects": [
     "vitest",

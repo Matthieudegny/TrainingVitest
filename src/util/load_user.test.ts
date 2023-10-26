@@ -15,9 +15,25 @@ describe("loadUserDetails", () => {
   //   });
 
   //testV2
+  //   test("load user data as expected", async () => {
+  //     const user = await loadUserData("antho");
+  //     expect(user).toMatchSnapshot();
+  //   });
+  //testV3
   test("load user data as expected", async () => {
     const user = await loadUserData("antho");
-    expect(user).toMatchSnapshot();
+    expect(user).toMatchInlineSnapshot(`
+      {
+        "coolness": 100,
+        "favoriteFood": "sushi",
+        "name": "Bob",
+        "projects": [
+          "vitest",
+          "vite",
+        ],
+        "username": "antho",
+      }
+    `);
   });
   test("set coolness level appropriately", async () => {
     const antho = await loadUserData("antho");
