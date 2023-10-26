@@ -1,6 +1,18 @@
-import { describe, test, expect } from "vitest";
-import { loadUserData } from "./load_user.tsx";
-
+import { describe, test, expect, vi } from "vitest";
+import { loadUserData } from "./load_user";
+vi.mock("./load-user-data", () => {
+  return {
+    loadUserData() {
+      return {
+        coolness: -1,
+        favoriteFood: "fish",
+        name: "Zod",
+        projects: ["vue", "angular"],
+        username: "testuser",
+      };
+    },
+  };
+});
 describe("loadUserDetails", () => {
   //test v1
   //   test("load user data as expected", async () => {
